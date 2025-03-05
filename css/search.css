@@ -1,0 +1,105 @@
+
+img {
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+
+ul.menu {
+    width: 1200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+li {
+    flex-grow: 1;
+    display: inline-block;
+    list-style: none;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.top_image {
+    background-image: url(../img/library.png);
+    background-repeat: no-repeat;
+    padding: 20px;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: contain;
+    /* 画像のサイズを指定    */
+    width: 100%;
+    height: 1500px;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+form.main {
+    width: 700px;
+    margin: 80px auto;
+    font-weight: bold;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+table.search{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+
+
+.button {
+    padding: 5px 20px;
+    margin: 10px;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.button:hover{
+    color: #fff;
+    background: #000;
+}
+
+.search_submit{
+    text-align: center;
+    margin-top: 30px;
+}
+
+table.result{
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
