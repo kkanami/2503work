@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","maria");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","maria");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -55,7 +55,7 @@
                 <h1>library</h1>
                 <ul class="list">
                     <?php
-        $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+        $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
         $stmt=$pdo->query("select* from collection_book where private=2 order by id desc");
 
              while($row=$stmt->fetch()){

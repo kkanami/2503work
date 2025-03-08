@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -56,7 +56,7 @@
                     <h1>プロフィール</h1>
                     <?php
                 mb_internal_encoding("utf8");
-                $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+                $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
                 $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
                 $row=$stmt->fetch();
                 ?>

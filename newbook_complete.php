@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -18,7 +18,7 @@
 
 
     try{
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $sql="insert into collection_book(private,title,author,isbn,publisher,publication_date,unread,memo,owner)
     values(:private,:title,:author,:isbn,:publisher,:publication_date,:unread,:memo, :owner)";
     if(!empty($_POST['title'])) {

@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -54,7 +54,7 @@
         //PDO
         mb_internal_encoding("utf8");
         try{
-            $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+            $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
             if(!empty($_POST['resultid2'])){
               $pdo->exec("update collection_book set delete_flag=1 , update_time= now() where id = '".$_POST['resultid2']."'");
             }

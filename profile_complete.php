@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","collection");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -54,7 +54,7 @@
         //PDO
         mb_internal_encoding("utf8");
         try{
-            $pdo=new PDO("mysql:dbname=14_work;host=localhost;","kkanami","");
+            $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","");
             if(!empty($_POST)) {
             $pdo->exec("update login_user set family_name='".$_POST['family_name']."' , last_name='".$_POST['last_name']."' , nick_name='".$_POST['nick_name']."' ,  mail='".$_POST['mail']."' , gender='".$_POST['gender']."' , postal_code='".$_POST['postal_code']."' , prefecture='".$_POST['prefecture']."' , address_1='".$_POST['address_1']."' , address_2='".$_POST['address_2']."' , update_time= now() where id = '". $_SESSION['user']."'");
             }
