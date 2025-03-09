@@ -7,7 +7,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TOPページ</title>
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
+    <meta property=”og:image” content=”../img/library.png” />
+    <title>Collection Of Book</title>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript">
@@ -34,44 +41,44 @@
 
 
 <body>
+    <div class="wrap" ontouchstart="">
+        <main>
+            <div class="top_image">
+                <h1>Collection Of Book</h1>
+                <p>読書記録アプリケーション</p>
 
-    <main>
-        <div class="top_image">
-            <h1>Collection Of Book</h1>
-            <p>読書記録アプリケーション</p>
-
-            <div class="mypage">
-                <?php
+                <div class="mypage">
+                    <?php
                   if(!empty($_SESSION['user'])) {
                     echo "ログイン済です<a href=mypage.php>▶マイページに戻る</a>";
                   }
                 ?>
+                </div>
+
+                <form method="post" class="login" action="index.php" name="form" id="form" onsubmit="return !!(check1()& check2())">
+
+                    <div>
+                        <label>メールアドレス</label>
+                        <br>
+                        <input type="email" class="text" size="50" maxlength="100" id="mail" name="mail" value="">
+                    </div>
+                    <p style="color:#FF0000" id="mail_msg"></p>
+                    <br>
+                    <div>
+                        <label>パスワード</label>
+                        <br>
+                        <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="50" maxlength="10" id="password" name="password" value="">
+                    </div>
+                    <p style="color:#FF0000" id="password_msg"></p>
+
+                    <div>
+                        <input type="submit" class="button" value="ログイン">
+                    </div>
+                </form>
+                <a href="regist.php">新規登録</a>
             </div>
 
-            <form method="post" class="login" action="index.php" name="form" id="form" onsubmit="return !!(check1()& check2())">
-
-                <div>
-                    <label>メールアドレス</label>
-                    <br>
-                    <input type="email" class="text" size="50" maxlength="100" id="mail" name="mail" value="">
-                </div>
-                <p style="color:#FF0000" id="mail_msg"></p>
-                <br>
-                <div>
-                    <label>パスワード</label>
-                    <br>
-                    <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="50" maxlength="10" id="password" name="password" value="">
-                </div>
-                <p style="color:#FF0000" id="password_msg"></p>
-
-                <div>
-                    <input type="submit" class="button" value="ログイン">
-                </div>
-            </form>
-            <a href="regist.php">新規登録</a>
-        </div>
-
-        <?php
+            <?php
     if((empty($_POST['mail'])) || (empty($_POST['password']))) {
         exit;
     }
@@ -106,8 +113,8 @@
  
     ?>
 
-    </main>
-
+        </main>
+    </div>
 </body>
 
 </html>

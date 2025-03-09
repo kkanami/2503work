@@ -11,8 +11,9 @@
     <div class="top_image">
         <form method="post" class="main" action="regist_confirm.php" 　name="form" id="form" onsubmit="return !! (check() & check2() & check3()& check4()& check5())">
             <h1>アカウント登録</h1>
+            <p>*は必須項目です。</p>
             <div>
-                <label>名前（姓）</label>
+                <label>名前（姓）*</label>
                 <br>
                 <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>">
                 <br>
@@ -20,28 +21,28 @@
             <p id="family_name_msg" style="color: red"></p>
 
             <div>
-                <label>名前（名）</label>
+                <label>名前（名）*</label>
                 <br>
                 <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}?>">
             </div>
             <p id="last_name_msg" style="color: red"></p>
 
             <div>
-                <label>ニックネーム</label>
+                <label>ニックネーム*</label>
                 <br>
                 <input type="text" class="text" size="35" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}?>">
             </div>
             <p id="nick_name_msg" style="color: red"></p>
 
             <div>
-                <label>メールアドレス</label>
+                <label>メールアドレス*</label>
                 <br>
                 <input type="email" class="text" size="60" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}?>">
             </div>
             <p id="mail_msg" style="color: red"></p>
 
             <div>
-                <label>パスワード</label>
+                <label>パスワード*</label>
                 <br>
                 <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="35" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
             </div>

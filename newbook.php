@@ -65,7 +65,7 @@
 
         <form method="post" class="main" action="newbook_confirm.php" 　name="form" id="form" onsubmit="return check()">
             <h1>蔵書登録</h1>
-             
+              <p>*は必須項目です。</p>
               <div>
                 <label>非公開/公開</label>
                 <br>
@@ -77,7 +77,7 @@
             </div>
 
             <div>
-                <label>タイトル</label>
+                <label>タイトル*</label>
                 <br>
                 <input type="text" class="text" size="30" maxlength="30" id="title" name="title" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}?>">
                 <br>
