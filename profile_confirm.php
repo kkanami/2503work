@@ -24,13 +24,19 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>プロフィール更新確認画面</title>
 
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="img_icon">
             <a href="index.php"><img src="img/library.png" title="TOPページへ" alt="TOPページへ"></a>
         </div>
@@ -59,7 +65,7 @@
 
                     <?php
                     mb_internal_encoding("utf8");
-                    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","");
+                    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
                     if(empty($_POST)) {
                         $stmt=$pdo->query("select*from login_user where id = 5");
                         $row=$stmt->fetch();

@@ -22,13 +22,19 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書削除完了画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
 <body>
 
-  <header>
+    <header>
         <div class="img_icon">
             <a href="index.php"><img src="img/library.png" title="TOPページへ" alt="TOPページへ"></a>
         </div>
@@ -66,7 +72,7 @@
         ?>
 
         <div class="top_image">
-            <form action="mypage.html" class="main">
+            <form action="mypage.php" class="main">
                 <h1>蔵書削除完了画面</h1>
                 <p><span>削除完了しました</span></p>
                 <input type="submit" class="button" value="マイページへ戻る">

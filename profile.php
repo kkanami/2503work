@@ -24,12 +24,18 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>プロフィール画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="img_icon">
             <a href="index.php"><img src="img/library.png" title="TOPページへ" alt="TOPページへ"></a>
         </div>
@@ -147,7 +153,7 @@
                             <option value="岐阜県" data-pref-id="21" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "岐阜県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "岐阜県" ){ echo 'selected'; } }?>>岐阜県</option>
                             <option value="静岡県" data-pref-id="22" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "静岡県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "静岡県" ){ echo 'selected'; }} ?>>静岡県</option>
                             <option value="愛知県" data-pref-id="23" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "愛知県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "愛知県" ){ echo 'selected'; } }?>>愛知県</option>
-                            <option value="三重県" data-pref-id="24" <?phpif(empty($_POST['prefecture'])){if( $row['prefecture'] === "三重県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "三重県" ){ echo 'selected'; }} ?>>三重県</option>
+                            <option value="三重県" data-pref-id="24" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "三重県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "三重県" ){ echo 'selected'; }} ?>>三重県</option>
                             <option value="滋賀県" data-pref-id="25" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "滋賀県" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "滋賀県" ){ echo 'selected'; }}?>>滋賀県</option>
                             <option value="京都府" data-pref-id="26" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "京都府" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "京都府" ){ echo 'selected'; } }?>>京都府</option>
                             <option value="大阪府" data-pref-id="27" <?php if(empty($_POST['prefecture'])){if( $row['prefecture'] === "大阪府" ){ echo 'selected'; } }else{if( $_POST['prefecture'] === "大阪府" ){ echo 'selected'; } }?>>大阪府</option>

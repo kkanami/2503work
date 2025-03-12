@@ -13,7 +13,6 @@
     <meta property=”og:title” content=”Collection Of Book” />
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
-    <meta property=”og:image” content=”../img/library.png” />
     <title>Collection Of Book</title>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">

@@ -23,7 +23,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Collection of Book</title>
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
+    <title>マイページ</title>
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
 
 </head>
@@ -78,7 +84,7 @@
                 echo '<tr><td></td><td><br></td><td>'. $row['author']."</td></tr>";
                 echo '<tr><td>'. $row['isbn']."</td><td><br></td><td>". $row['publisher']."</td></tr>";
                 echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";   
-                 
+                   echo '<tr><td></td><td><br></td><td>'. $row['memo']."</td></tr>";   
                 echo '<tr><td><form method="post" action="update.php" >';
                 echo "<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
                 echo '<input type="submit" class="button" value="更新">';

@@ -10,7 +10,7 @@
         exit();
     }
 
-    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","maria");
+    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
     
@@ -23,6 +23,12 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>library</title>
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
 
@@ -87,10 +93,10 @@
                 echo "<input type='submit' class='button' value='削除'>";
  
                 echo "</form>";
-                echo "</td><td>". $row['memo']."</td></tr></li>";
+                echo "</td><td>". $row['memo']."</td></tr>";
            
                 echo "</table>";
-                echo "<br>";
+                echo "<br></li>";
                } 
             ?>
                 </ul>

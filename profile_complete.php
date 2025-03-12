@@ -23,13 +23,19 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>プロフィール更新完了画面</title>
 
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="img_icon">
             <a href="index.php"><img src="img/library.png" title="TOPページへ" alt="TOPページへ"></a>
         </div>
@@ -54,7 +60,7 @@
         //PDO
         mb_internal_encoding("utf8");
         try{
-            $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","");
+            $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
             if(!empty($_POST)) {
             $pdo->exec("update login_user set family_name='".$_POST['family_name']."' , last_name='".$_POST['last_name']."' , nick_name='".$_POST['nick_name']."' ,  mail='".$_POST['mail']."' , gender='".$_POST['gender']."' , postal_code='".$_POST['postal_code']."' , prefecture='".$_POST['prefecture']."' , address_1='".$_POST['address_1']."' , address_2='".$_POST['address_2']."' , update_time= now() where id = '". $_SESSION['user']."'");
             }

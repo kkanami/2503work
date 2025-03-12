@@ -24,10 +24,16 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書更新画面</title>
 
     <link rel="stylesheet" type="text/css" href="css/regist.css">
-       <script type="text/javascript">
+    <script type="text/javascript">
         function check() {
             if (form.title.value == "") {
                 document.getElementById("title_msg").innerHTML = "タイトルを入力してください。";
@@ -76,8 +82,8 @@
                 $row=$stmt->fetch() ;
                     }
                 ?>
-                
-                 <div>
+
+                <div>
                     <label>非公開/公開</label>
                     <br>
                     <input type="radio" id="1" name="private" value="1" <?php if(empty($_POST['private'])) { if($row['private']== "1" ){ echo 'checked';}} else{ if($_POST['private']== "1" ){ echo 'checked';}}?>>
@@ -144,7 +150,7 @@
 
         </div>
     </main>
-  
+
 </body>
 
 </html>

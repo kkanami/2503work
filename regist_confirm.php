@@ -3,6 +3,12 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>アカウント登録確認画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
@@ -76,8 +82,8 @@
                 <?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];} ?>
             </p>
             <div class="button_container">
-            
-             <form method="POST" action="regist.php">
+
+                <form method="POST" action="regist.php">
                     <input type="submit" class="button" value="前に戻る">
                     <input type="hidden" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>" name="family_name">
                     <input type="hidden" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}?>" name="last_name">
@@ -91,8 +97,8 @@
                     <input type="hidden" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}?>" name="address_2">
 
                 </form>
-             
-             
+
+
                 <form action="regist_complete.php" method="post">
                     <input type="submit" class="button" value="登録する">
                     <input type="hidden" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>" name="family_name">
@@ -107,9 +113,9 @@
                     <input type="hidden" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}?>" name="address_2">
 
                 </form>
-                
-                
-              
+
+
+
 
             </div>
         </div>

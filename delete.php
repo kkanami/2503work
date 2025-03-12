@@ -23,12 +23,18 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書削除画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
 <body>
-   <header>
+    <header>
         <div class="img_icon">
             <a href="index.php"><img src="img/library.png" title="TOPページへ" alt="TOPページへ"></a>
         </div>
@@ -118,7 +124,7 @@
                         <th>memo
                         </th>
                         <td>
-                            <?phpif(isset($row['memo'])){echo $row['memo']; } ?>
+                            <?php if(isset($row['memo'])){echo $row['memo']; } ?>
                         </td>
                     </tr>
 
