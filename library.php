@@ -83,14 +83,11 @@
                 echo '<tr><td>'. $row['isbn']."</td><td><br></td><td>". $row['publisher']."</td></tr>";
                 echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";   
                  
-                echo '<tr><td><form method="post" action="update.php" >';
-                echo "<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
-                echo '<input type="submit" class="button" value="更新">';
-                echo "</form></td>";
+                echo '<tr><td></td>';
                  
-                echo '<td><form  method="post" action="delete.php">';
+                echo '<td><form  method="post" action="copy.php">';
                 echo "<input type='hidden' value={$result} name='resultid2' id='resultid2'>";
-                echo "<input type='submit' class='button' value='削除'>";
+                echo "<input type='submit' class='button' value='コピー'>";
  
                 echo "</form>";
                 echo "</td><td>". $row['memo']."</td></tr>";

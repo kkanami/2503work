@@ -83,8 +83,8 @@
                 echo '<tr><td>'.$privatedisp.'</td><td></td><td>'. $row['title'].'</td></tr>';
                 echo '<tr><td></td><td><br></td><td>'. $row['author']."</td></tr>";
                 echo '<tr><td>'. $row['isbn']."</td><td><br></td><td>". $row['publisher']."</td></tr>";
-                echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";   
-                   echo '<tr><td></td><td><br></td><td>'. $row['memo']."</td></tr>";   
+                echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";     
+                 
                 echo '<tr><td><form method="post" action="update.php" >';
                 echo "<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
                 echo '<input type="submit" class="button" value="更新">';

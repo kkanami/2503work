@@ -127,7 +127,7 @@
             <div>
                 <label>memo</label>
                 <br>
-                <textarea rows="5" cols="50" maxlength="200" id="memo" name="memo" value="<?php if(!empty($_POST['memo'])){echo $_POST['memo'];}?>"></textarea>
+                <textarea rows="5" cols="50" maxlength="200" id="memo" name="memo"><?php if(!empty($_POST['memo'])){echo $_POST['memo'];}?></textarea>
             </div>
 
             <div>
