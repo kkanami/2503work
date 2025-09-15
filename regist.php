@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=”description” content=”読書記録アプリケーション”>
     <meta property=”og:type” content=”website” />
     <meta property=”og:title” content=”Collection Of Book” />
@@ -11,6 +11,9 @@
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>アカウント登録画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,35 +27,35 @@
                 <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>">
                 <br>
             </div>
-            <p id="family_name_msg" style="color: red"></p>
+            <p id="family_name_msg" class="required"></p>
 
             <div>
                 <label>名前（名）*</label>
                 <br>
                 <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}?>">
             </div>
-            <p id="last_name_msg" style="color: red"></p>
+            <p id="last_name_msg" class="required"></p>
 
             <div>
                 <label>ニックネーム*</label>
                 <br>
                 <input type="text" class="text" size="35" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}?>">
             </div>
-            <p id="nick_name_msg" style="color: red"></p>
+            <p id="nick_name_msg" class="required"></p>
 
             <div>
                 <label>メールアドレス*</label>
                 <br>
                 <input type="email" class="text" size="60" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}?>">
             </div>
-            <p id="mail_msg" style="color: red"></p>
+            <p id="mail_msg" class="required"></p>
 
             <div>
                 <label>パスワード*</label>
                 <br>
                 <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="35" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
             </div>
-            <p id="password_msg" style="color: red"></p>
+            <p id="password_msg" class="required"></p>
 
             <div>
                 <label>性別</label>
@@ -154,7 +157,7 @@
     <script type="text/javascript">
         function check() {
             if (form.family_name.value == "") {
-                document.getElementById("family_name_msg").innerHTML = "名前（姓）を入力してください。";
+                document.getElementById("family_name_msg").innerHTML = "*名前（姓）を入力してください。";
                 return false;
             } else {
                 return true;
@@ -163,7 +166,7 @@
 
         function check2() {
             if (form.last_name.value == "") {
-                document.getElementById("last_name_msg").innerHTML = "名前（名）を入力してください。";
+                document.getElementById("last_name_msg").innerHTML = "*名前（名）を入力してください。";
                 return false;
             } else {
                 return true;
@@ -172,7 +175,7 @@
 
         function check3() {
             if (form.nick_name.value == "") {
-                document.getElementById("nick_name_msg").innerHTML = "ニックネームを入力してください。";
+                document.getElementById("nick_name_msg").innerHTML = "*ニックネームを入力してください。";
                 return false;
             } else {
                 return true;
@@ -181,7 +184,7 @@
 
         function check4() {
             if (form.mail.value == "") {
-                document.getElementById("mail_msg").innerHTML = "メールアドレスを入力してください。";
+                document.getElementById("mail_msg").innerHTML = "*メールアドレスを入力してください。";
                 return false;
             } else {
                 return true;
@@ -190,7 +193,7 @@
 
         function check5() {
             if (form.password.value == "") {
-                document.getElementById("password_msg").innerHTML = "パスワードを入力してください。";
+                document.getElementById("password_msg").innerHTML = "*パスワードを入力してください。";
                 return false;
             } else {
                 return true;

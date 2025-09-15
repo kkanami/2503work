@@ -23,7 +23,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=”description” content=”読書記録アプリケーション”>
     <meta property=”og:type” content=”website” />
     <meta property=”og:title” content=”Collection Of Book” />
@@ -59,11 +59,13 @@
             <form method="post" class="main" action="#">
                 <h1>蔵書検索画面</h1>
                 <table class="search">
-                    <tr>
+                     <tr>
                         <th>タイトル</th>
-                        <td><input type="text" class="text" id="title" name="title" value=""></td>
+                        <td colspan="3"><input type="text" class="text" size="60" id="title" name="title" value=""></td>
+                    </tr>
+                    <tr>
                         <th>著者</th>
-                        <td><input type="text" class="text" id="author" name="author" value=""></td>
+                        <td colspan="3"><input type="text" class="text" size="60" id="author" name="author" value=""></td>
                     </tr>
                     <tr>
                         <th>ISBN/ISSN</th>
@@ -75,7 +77,7 @@
                         <th>出版日</th>
                         <td> <input type="text" class="text" id="publication_date" name="publication_date" value=""></td>
                         <th>未読/既読</th>
-                        <td> <input type="radio" id="1" name="unread" value="1">
+                        <td> <input type="radio" id="1" name="unread" value="1" >
                             <label for="1">未読</label>
                             <input type="radio" id="2" name="unread" value="2">
                             <label for="2">既読</label>
@@ -87,7 +89,7 @@
                         <th>memo</th>
                         <td> <input type="text" class="text" id="memo" name="memo" value=""></td>
                         <th>非公開/公開</th>
-                        <td> <input type="radio" id="1" name="private" value="1">
+                        <td> <input type="radio" id="1" name="private" value="1" >
                             <label for="1">非公開</label>
                             <input type="radio" id="2" name="private" value="2">
                             <label for="2">公開</label>
@@ -95,6 +97,7 @@
                             <label for="3">未選択</label>
                         </td>
                     </tr>
+
                 </table>
 
                 <div class="search_submit">

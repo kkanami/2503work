@@ -23,7 +23,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name=”viewport” content=”width=device-width,initial-scale=1″>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name=”description” content=”読書記録アプリケーション”>
     <meta property=”og:type” content=”website” />
     <meta property=”og:title” content=”Collection Of Book” />
@@ -59,6 +59,9 @@
         <div class="top_image">
             <div class="main">
                 <h1>library</h1>
+                <p>ここでは他のユーザーが公開している本を閲覧できます。<br>
+                    気になる本は、コピーで自分の蔵書に追加できます。
+                </p>
                 <ul class="list">
                     <?php
         $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
