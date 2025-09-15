@@ -5,11 +5,11 @@ body {
 .top_image {
   background-image: url(../img/library.png);
   background-repeat: no-repeat;
-  background-position: center 60%;
+  background-position: center 80%;
   background-size: contain;
   /* 画像のサイズを指定    */
   width: 100%;
-  height: 800px;
+  height: 700px;
   text-align: center;
 }
 
@@ -75,13 +75,21 @@ a:hover {
   background: #000;
 }
 
+span {
+  display: block;
+  color: #e60000;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 14px; /* スマホ用に小さめ */
   }
 
   .top_image {
-    height: 400px; /* スマホ用に高さを縮める */
+    height: 550px; /* スマホ用に高さを縮める */
     background-size: contain;
   }
 
