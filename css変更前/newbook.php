@@ -31,13 +31,10 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書登録画面</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/regist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/regist.css">
-
     <script type="text/javascript">
         function check() {
             if (form.title.value == "") {
@@ -77,7 +74,7 @@
 
         <form method="post" class="main" action="newbook_confirm.php" 　name="form" id="form" onsubmit="return check()">
             <h1>蔵書登録</h1>
-            <p>新しく本を登録します。*は必須項目です。</p>
+            <p>*は必須項目です。</p>
             <div>
                 <label>非公開/公開</label>
                 <br>

@@ -59,11 +59,6 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書登録完了画面</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 

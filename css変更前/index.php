@@ -15,11 +15,10 @@
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>Collection Of Book</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-       <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript">
         function check1() {
             if (form.mail.value == "") {
@@ -44,14 +43,11 @@
 
 
 <body>
-    <header>
-        <h1>Collection Of Book</h1>
-                <p>読書記録アプリケーション</p>
-            </header>
-  
+    <div class="wrap" ontouchstart="">
         <main>
             <div class="top_image">
-                
+                <h1>Collection Of Book</h1>
+                <p>読書記録アプリケーション</p>
 
                 <div class="mypage">
                     <?php
@@ -64,21 +60,21 @@
                 <form method="post" class="login" action="index.php" name="form" id="form" onsubmit="return !!(check1()& check2())">
 
                     <div>
-                        <label for="mail">メールアドレス</label>
+                        <label>メールアドレス</label>
                         <br>
-                        <input type="email" class="text" size="35" maxlength="100" id="mail" name="mail" value="">
+                        <input type="email" class="text" size="50" maxlength="100" id="mail" name="mail" value="">
                     </div>
                     <p id="mail_msg"></p>
                     <br>
                     <div>
-                        <label for="password">パスワード</label>
+                        <label>パスワード</label>
                         <br>
-                        <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="35" maxlength="10" id="password" name="password" value="">
+                        <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="50" maxlength="10" id="password" name="password" value="">
                     </div>
                     <p id="password_msg"></p>
 
                     <div>
-                        <font color="#000"><input type="submit" class="button" value="ログイン"></font>
+                        <input type="submit" class="button" value="ログイン">
                     </div>
                 </form>
                 <a href="regist.php">新規登録</a>
@@ -106,7 +102,6 @@
             session_regenerate_id(true);
             $_SESSION['user']=$row['id'];
             header("Location: mypage.php");
-            exit;
         }else {
             echo"<span>ログインに失敗しました。</span>";
 
@@ -121,7 +116,7 @@
     ?>
 
         </main>
-
+    </div>
 </body>
 
 </html>

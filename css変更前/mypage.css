@@ -1,8 +1,3 @@
-header {
-  color: #000;
-  background-color: #fff;
-}
-
 img {
   width: 100px;
   margin: 0 auto;
@@ -30,10 +25,6 @@ li {
   padding-left: 20px;
 }
 
-h2 {
-  font-size: 1.5rem;
-}
-
 a {
   text-decoration: none;
   color: black;
@@ -44,34 +35,28 @@ a {
   padding: 20px;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 200px;
+  background-position: center 60%;
   background-size: contain;
   /* 画像のサイズを指定    */
   width: 100%;
   height: 1500px;
 }
 
+h1 {
+  margin-top: 30px 0;
+  text-align: center;
+}
+
 .main {
   width: 700px;
   margin: 80px auto;
-  font-weight: 600;
+  font-weight: bold;
   padding-top: 10px;
   color: black;
   background: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 10px;
   text-align: center;
-}
-
-h1 {
-  font-size: 2rem;
-  padding: 20px 0 10px;
-  text-align: center;
-}
-
-p {
-  padding-bottom: 20px;
-  font-weight: 500;
 }
 
 .mypage {
@@ -124,7 +109,6 @@ p {
 .button {
   padding: 5px 20px;
   border: 2px solid #000;
-  border-radius: 5px;
   background: #fff;
 }
 
@@ -133,13 +117,8 @@ p {
   background: #000;
 }
 
-.list {
-  padding-left: 0px;
-}
-
 .list-item {
   opacity: 1;
-  padding-left: 0px;
 }
 
 .list-item.is-hidden {
@@ -161,7 +140,6 @@ p {
   background-color: #000;
   color: #fff;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   outline: none;
   padding: 0;
@@ -199,7 +177,7 @@ p {
   .top_image {
     height: 600px; /* 高さを小さくしてスクロール量を減らす */
     background-size: contain;
-    background-position: 50% 400px;
+    background-position: center center;
   }
 
   /* アイコン画像のサイズを縮小 */

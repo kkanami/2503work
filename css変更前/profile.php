@@ -31,14 +31,10 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>プロフィール画面</title>
-
-    
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/regist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/regist.css">
-
 </head>
 
 <body>
@@ -67,7 +63,6 @@
                 <form method="post" class="main" action="profile_confirm.php" 　name="form" id="form" onsubmit="return !! (check() & check2() & check3()& check4())">
 
                     <h1>プロフィール</h1>
-                    <p>あなたのユーザー情報です。</p>
                     <?php
                 mb_internal_encoding("utf8");
                 $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
@@ -78,7 +73,7 @@
                     <div>
                         <label>名前（姓）</label>
                         <br>
-                        <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="20" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}else{echo $row['family_name'];}?>">
+                        <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}else{echo $row['family_name'];}?>">
                         <br>
                     </div>
                     <p class="required" id="family_name_msg"></p>
@@ -87,21 +82,21 @@
                     <div>
                         <label>名前（名）</label>
                         <br>
-                        <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="20" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}else{echo $row['last_name'];}?>">
+                        <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}else{echo $row['last_name'];}?>">
                     </div>
                     <p class="required" id="last_name_msg"></p>
 
                     <div>
                         <label>ニックネーム</label>
                         <br>
-                        <input type="text" class="text" size="20" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}else{echo $row['nick_name'];}?>">
+                        <input type="text" class="text" size="35" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}else{echo $row['nick_name'];}?>">
                     </div>
                     <p class="required" id="nick_name_msg"></p>
 
                     <div>
                         <label>メールアドレス</label>
                         <br>
-                        <input type="email" class="text" size="35" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}else{echo $row['mail'];}?>">
+                        <input type="email" class="text" size="60" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}else{echo $row['mail'];}?>">
                     </div>
                     <p class="required" id="mail_msg"></p>
 
@@ -109,7 +104,7 @@
                         <label>パスワード</label>
                         <br>
                         <p class="required">セキュリティのため表示できません。変更する場合のみ入力してください。</p>
-                        <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="20" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
+                        <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="35" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
                     </div>
                     <p class="required" id="password_msg"></p>
 
@@ -130,7 +125,7 @@
                     <div>
                         <label>郵便番号</label>
                         <br>
-                        <input type="text" pattern="^[0-9]*$" class="text" size="20" maxlength="7" id="postal_code" name="postal_code" value="<?php if(!empty($_POST['postal_code'])){echo $_POST['postal_code'];}else{echo $row['postal_code'];}?>">
+                        <input type="text" pattern="^[0-9]*$" class="text" size="35" maxlength="7" id="postal_code" name="postal_code" value="<?php if(!empty($_POST['postal_code'])){echo $_POST['postal_code'];}else{echo $row['postal_code'];}?>">
                     </div>
 
                     <div>
@@ -197,7 +192,7 @@
                     <div>
                         <label>住所（番地）</label>
                         <br>
-                        <input type="text" class="text" pattern="^[　ー０-９ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" size="35" maxlength="100" id="address_2" name="address_2" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}else{echo $row['address_2'];}?>">
+                        <input type="text" class="text" pattern="^[　ー０-９ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" size="60" maxlength="100" id="address_2" name="address_2" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}else{echo $row['address_2'];}?>">
                     </div>
 
                     <div>

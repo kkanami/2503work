@@ -10,13 +10,10 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>アカウント登録画面</title>
-
-   <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/regist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/regist.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,7 +24,7 @@
             <div>
                 <label>名前（姓）*</label>
                 <br>
-                <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="20" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>">
+                <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="family_name" name="family_name" value="<?php if(!empty($_POST['family_name'])){echo $_POST['family_name'];}?>">
                 <br>
             </div>
             <p id="family_name_msg" class="required"></p>
@@ -35,28 +32,28 @@
             <div>
                 <label>名前（名）*</label>
                 <br>
-                <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="20" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}?>">
+                <input type="text" class="text" pattern="^[ぁ-ん一-龠ー]*$" size="35" maxlength="10" id="last_name" name="last_name" value="<?php if(!empty($_POST['last_name'])){echo $_POST['last_name'];}?>">
             </div>
             <p id="last_name_msg" class="required"></p>
 
             <div>
                 <label>ニックネーム*</label>
                 <br>
-                <input type="text" class="text" size="20" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}?>">
+                <input type="text" class="text" size="35" maxlength="10" id="nick_name" name="nick_name" value="<?php if(!empty($_POST['nick_name'])){echo $_POST['nick_name'];}?>">
             </div>
             <p id="nick_name_msg" class="required"></p>
 
             <div>
                 <label>メールアドレス*</label>
                 <br>
-                <input type="email" class="text" size="35" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}?>">
+                <input type="email" class="text" size="60" maxlength="100" id="mail" name="mail" value="<?php if(!empty($_POST['mail'])){echo $_POST['mail'];}?>">
             </div>
             <p id="mail_msg" class="required"></p>
 
             <div>
                 <label>パスワード*</label>
                 <br>
-                <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="20" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
+                <input type="password" pattern="^[0-9a-zA-Z]*$" class="text" size="35" maxlength="10" id="password" name="password" value="<?php if(!empty($_POST['password'])){echo $_POST['password'];}?>">
             </div>
             <p id="password_msg" class="required"></p>
 
@@ -76,7 +73,7 @@
             <div>
                 <label>郵便番号</label>
                 <br>
-                <input type="text" pattern="^[0-9]*$" class="text" size="20" maxlength="7" id="postal_code" name="postal_code" value="<?php if(!empty($_POST['postal_code'])){echo $_POST['postal_code'];}?>">
+                <input type="text" pattern="^[0-9]*$" class="text" size="35" maxlength="7" id="postal_code" name="postal_code" value="<?php if(!empty($_POST['postal_code'])){echo $_POST['postal_code'];}?>">
             </div>
 
             <div>
@@ -144,7 +141,7 @@
             <div>
                 <label>住所（番地）</label>
                 <br>
-                <input type="text" class="text" pattern="^[　ー０-９ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" size="35" maxlength="100" id="address_2" name="address_2" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}?>">
+                <input type="text" class="text" pattern="^[　ー０-９ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー]*$" size="60" maxlength="100" id="address_2" name="address_2" value="<?php if(!empty($_POST['address_2'])){echo $_POST['address_2'];}?>">
             </div>
 
             <div>

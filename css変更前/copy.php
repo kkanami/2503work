@@ -26,12 +26,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>蔵書コピー登録画面</title>
 
-       <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/regist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/regist.css">
-   
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
        <script type="text/javascript">
         function check() {
             if (form.title.value == "") {
@@ -95,7 +93,7 @@
                 <div>
                     <label>タイトル</label>
                     <br>
-                    <input type="text" class="text" size="35" maxlength="30" id="title" name="title" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}else{echo $row['title'];}?>">
+                    <input type="text" class="text" size="35" maxlength="10" id="title" name="title" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}else{echo $row['title'];}?>">
                     <br>
                 </div>
                 <p style="color:#FF0000" id="title_msg"></p>
@@ -103,19 +101,19 @@
                 <div>
                     <label>著書</label>
                     <br>
-                    <input type="text" class="text" size="35" maxlength="30" id="author" name="author" value="<?php if(!empty($_POST['author'])){echo $_POST['author'];}else{echo $row['author'];}?>">
+                    <input type="text" class="text" size="35" maxlength="10" id="author" name="author" value="<?php if(!empty($_POST['author'])){echo $_POST['author'];}else{echo $row['author'];}?>">
                 </div>
 
                 <div>
                     <label>ISBN/ISSN</label>
                     <br>
-                    <input type="text" pattern="^[-0-9]+$" class="text" size="35" maxlength="13" id="isbn" name="isbn" value="<?php if(!empty($_POST['isbn'])){echo $_POST['isbn'];}else{echo $row['isbn'];}?>">
+                    <input type="text" pattern="^[-0-9]+$" class="text" size="35" maxlength="10" id="isbn" name="isbn" value="<?php if(!empty($_POST['isbn'])){echo $_POST['isbn'];}else{echo $row['isbn'];}?>">
                 </div>
 
                 <div>
                     <label>出版者</label>
                     <br>
-                    <input type="text" 　inputmode="katakana" class="text" size="35" maxlength="30" id="publisher" name="publisher" value="<?php if(!empty($_POST['publisher'])){echo $_POST['publisher'];}else{echo $row['publisher'];}?>">
+                    <input type="text" 　inputmode="katakana" class="text" size="35" maxlength="10" id="publisher" name="publisher" value="<?php if(!empty($_POST['publisher'])){echo $_POST['publisher'];}else{echo $row['publisher'];}?>">
                 </div>
 
                 <div>

@@ -29,12 +29,7 @@
     <meta property=”og:title” content=”Collection Of Book” />
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
-    <title>library</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <title>マイページ</title>
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
 
 </head>
@@ -63,14 +58,14 @@
     <main>
         <div class="top_image">
             <div class="main">
-                <h1>library</h1>
-                <p>他のユーザーが公開している本を閲覧できます。<br>
-                    気になる本は、コピーで自分の蔵書に追加できます。
-                </p>
+
+                <h1>catalog</h1>
+                <p>ここには、あなたが登録した蔵書が表示されます。</p>
+
                 <ul class="list">
                     <?php
         $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
-        $stmt=$pdo->query("select* from collection_book where private=2 order by id desc");
+        $stmt=$pdo->query("select* from collection_book where owner = '". $_SESSION['user']."' order by id desc");
 
              while($row=$stmt->fetch()){
                 echo '<li class="list-item"><table class="mypage">' ;
@@ -89,13 +84,16 @@
                 echo '<tr><td>'.$privatedisp.'</td><td></td><td>'. $row['title'].'</td></tr>';
                 echo '<tr><td></td><td><br></td><td>'. $row['author']."</td></tr>";
                 echo '<tr><td>'. $row['isbn']."</td><td><br></td><td>". $row['publisher']."</td></tr>";
-                echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";   
+                echo '<tr><td></td><td><br></td><td>'. $row['publication_date']."</td></tr>";     
                  
-                echo '<tr><td></td>';
+                echo '<tr><td><form method="post" action="update.php" >';
+                echo "<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
+                echo '<input type="submit" class="button" value="更新">';
+                echo "</form></td>";
                  
-                echo '<td><form  method="post" action="copy.php">';
+                echo '<td><form  method="post" action="delete.php">';
                 echo "<input type='hidden' value={$result} name='resultid2' id='resultid2'>";
-                echo "<input type='submit' class='button' value='コピー'>";
+                echo "<input type='submit' class='button' value='削除'>";
  
                 echo "</form>";
                 echo "</td><td>". $row['memo']."</td></tr>";

@@ -9,6 +9,7 @@
         echo' <form action="index.php"><input type="submit" class="button" value="ログイン"></form>';
         exit();
     }
+
     $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
     $stmt=$pdo->query("select*from login_user where id = '". $_SESSION['user']."'");
     $row=$stmt->fetch();
@@ -24,15 +25,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>蔵書コピー登録画面</title>
+    <meta name=”description” content=”読書記録アプリケーション”>
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:title” content=”Collection Of Book” />
+    <meta property=”og:description” content=”読書記録アプリケーション” />
+    <meta property=”og:site_name” content=”Collection Of Book” />
+    <title>蔵書更新画面</title>
 
-       <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+    <link rel="stylesheet" type="text/css" href="css/regist.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" type="text/css" href="css/regist.css">
-   
-       <script type="text/javascript">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+    <script type="text/javascript">
         function check() {
             if (form.title.value == "") {
                 document.getElementById("title_msg").innerHTML = "タイトルを入力してください。";
@@ -69,20 +73,20 @@
 
     <main>
         <div class="top_image">
-            <form method="post" class="main" action="copy_confirm.php" 　name="form" id="form" onsubmit="return check()">
+            <form method="post" class="main" action="update_confirm.php" 　name="form" id="form" onsubmit="return check()">
 
-                <h1>蔵書コピー登録画面</h1>
+                <h1>蔵書更新画面</h1>
                 <?php
                 //PDO
                 mb_internal_encoding("utf8");
                 $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
                 if(!empty($_POST)){
-                $stmt=$pdo->query("select*from collection_book where id = '".$_POST['resultid2']."'");
+                $stmt=$pdo->query("select*from collection_book where owner = '". $_SESSION['user']."' and id = '".$_POST['resultid1']."'");
                 $row=$stmt->fetch() ;
                     }
                 ?>
-                
-                 <div>
+
+                <div>
                     <label>非公開/公開</label>
                     <br>
                     <input type="radio" id="1" name="private" value="1" <?php if(empty($_POST['private'])) { if($row['private']== "1" ){ echo 'checked';}} else{ if($_POST['private']== "1" ){ echo 'checked';}}?>>
@@ -95,7 +99,7 @@
                 <div>
                     <label>タイトル</label>
                     <br>
-                    <input type="text" class="text" size="35" maxlength="30" id="title" name="title" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}else{echo $row['title'];}?>">
+                    <input type="text" class="text" size="35" maxlength="10" id="title" name="title" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}else{echo $row['title'];}?>">
                     <br>
                 </div>
                 <p style="color:#FF0000" id="title_msg"></p>
@@ -103,19 +107,19 @@
                 <div>
                     <label>著書</label>
                     <br>
-                    <input type="text" class="text" size="35" maxlength="30" id="author" name="author" value="<?php if(!empty($_POST['author'])){echo $_POST['author'];}else{echo $row['author'];}?>">
+                    <input type="text" class="text" size="35" maxlength="10" id="author" name="author" value="<?php if(!empty($_POST['author'])){echo $_POST['author'];}else{echo $row['author'];}?>">
                 </div>
 
                 <div>
                     <label>ISBN/ISSN</label>
                     <br>
-                    <input type="text" pattern="^[-0-9]+$" class="text" size="35" maxlength="13" id="isbn" name="isbn" value="<?php if(!empty($_POST['isbn'])){echo $_POST['isbn'];}else{echo $row['isbn'];}?>">
+                    <input type="text" pattern="^[-0-9]+$" class="text" size="35" maxlength="10" id="isbn" name="isbn" value="<?php if(!empty($_POST['isbn'])){echo $_POST['isbn'];}else{echo $row['isbn'];}?>">
                 </div>
 
                 <div>
                     <label>出版者</label>
                     <br>
-                    <input type="text" 　inputmode="katakana" class="text" size="35" maxlength="30" id="publisher" name="publisher" value="<?php if(!empty($_POST['publisher'])){echo $_POST['publisher'];}else{echo $row['publisher'];}?>">
+                    <input type="text" 　inputmode="katakana" class="text" size="35" maxlength="10" id="publisher" name="publisher" value="<?php if(!empty($_POST['publisher'])){echo $_POST['publisher'];}else{echo $row['publisher'];}?>">
                 </div>
 
                 <div>
@@ -137,11 +141,11 @@
                 <div>
                     <label>memo</label>
                     <br>
-                    <textarea rows="5" cols="50" maxlength="200" id="memo" name="memo"><?php if(!empty($_POST['memo'])){echo $_POST['memo'];}else{echo $row['memo'];}?></textarea>
+                     <textarea rows="5" cols="50" maxlength="200" id="memo" name="memo"><?php if(!empty($_POST['memo'])){echo $_POST['memo'];}else{echo $row['memo'];}?></textarea>
                 </div>
 
                 <div>
-                    <input type='hidden' value='<?php echo $_POST["resultid2"];?>' name='resultid2' id='resultid2'>
+                    <input type='hidden' value='<?php echo $_POST["resultid1"];?>' name='resultid1' id='resultid1'>
                     <input type="submit" class="button" value="確認する">
                 </div>
 
@@ -149,7 +153,7 @@
 
         </div>
     </main>
-  
+
 </body>
 
 </html>

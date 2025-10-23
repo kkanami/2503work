@@ -30,11 +30,6 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>蔵書検索画面</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/search.css">
 </head>
 
@@ -63,32 +58,24 @@
 
             <form method="post" class="main" action="#">
                 <h1>蔵書検索画面</h1>
-                <p>自分の登録した本を検索できます。</p>
                 <table class="search">
                      <tr>
                         <th>タイトル</th>
-                        <td><input type="text" class="text" size="40" id="title" name="title" value=""></td>
+                        <td colspan="3"><input type="text" class="text" size="60" id="title" name="title" value=""></td>
                     </tr>
                     <tr>
                         <th>著者</th>
-                        <td><input type="text" class="text" size="40" id="author" name="author" value=""></td>
+                        <td colspan="3"><input type="text" class="text" size="60" id="author" name="author" value=""></td>
                     </tr>
                     <tr>
                         <th>ISBN/ISSN</th>
-                        <td> <input type="text" class="text" id="isbn" name="isbn" value=""></td>
-                    </tr>
-
-                    <tr>
+                        <td> <input type="text" id="isbn" name="isbn" value=""></td>
                         <th>出版者</th>
                         <td><input type="text" class="text" id="publisher" name="publisher" value=""></td>
                     </tr>
-
                     <tr>
                         <th>出版日</th>
                         <td> <input type="text" class="text" id="publication_date" name="publication_date" value=""></td>
-                    </tr>
-
-                    <tr>
                         <th>未読/既読</th>
                         <td> <input type="radio" id="1" name="unread" value="1" >
                             <label for="1">未読</label>
@@ -98,13 +85,9 @@
                             <label for="3">未選択</label>
                         </td>
                     </tr>
-
                     <tr>
                         <th>memo</th>
-                        <td> <input type="text" class="text" id="memo" name="memo" size="40" value=""></td>
-                    </tr>
-
-                    <tr>
+                        <td> <input type="text" class="text" id="memo" name="memo" value=""></td>
                         <th>非公開/公開</th>
                         <td> <input type="radio" id="1" name="private" value="1" >
                             <label for="1">非公開</label>
@@ -163,15 +146,12 @@
         echo  "<th>著者</th>";
         echo  "  <th>ISBN/ISSN</th>";
         echo  "<th>出版者</th>";
-        echo  '<th rowspan="2">操作</th>';
-        echo  "</tr>";
-        echo  "<tr>";
         echo  " <th>出版日</th>";
-        echo  "<th>未既読</th>";
+        echo  "<th>未読/既読</th>";
         echo  " <th>memo</th>";
         echo  " <th>登録日</th>";
         echo  " <th>更新日</th>";
-        
+        echo  '<th colspan="2">操作</th>';
         echo  "</tr>";
      
      
@@ -190,22 +170,8 @@
         echo "<td>". $row['author']."</td>";
         echo "<td>". $row['isbn']."</td>";
         echo "<td>". $row['publisher']."</td>";
-
-        echo '<td rowspan="2">';
-        echo '<form method="post" class="back" action="update.php" >';
-        echo"<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
-        echo'<input type="submit" class="button" value="更新">';
-        echo"</form>";
-        echo '<form  method="post" class="back" action="delete.php">';
-        echo"<input type='hidden' value={$result} name='resultid2' id='resultid2'>";
-        echo"<input type='submit' class='button' value='削除'>";
-
-        echo"</form>";
-        echo"</td>";
-        echo"</tr>";
-
-        echo "<tr>";
         echo "<td>". $row['publication_date']."</td>";
+
         $option=['1'=>'未読',
                  '2'=>'既読'];
             $unread=$row['unread'] ;
@@ -228,7 +194,20 @@
             echo "<td>". date('Y/m/d', strtotime($update))."</td>";
        }
 
+        echo "<td>";
+        echo '<form method="post" class="back" action="update.php" >';
+        echo"<input type='hidden' value={$result} name='resultid1' id='resultid1'>";
+        echo'<input type="submit" class="button" value="更新">';
+        echo"</form>";
+        echo"</td>";
 
+        echo "<td>";
+        echo '<form  method="post" class="back" action="delete.php">';
+        echo"<input type='hidden' value={$result} name='resultid2' id='resultid2'>";
+        echo"<input type='submit' class='button' value='削除'>";
+
+        echo"</form>";
+        echo"</td>";
         echo" </tr>";
     }
        }

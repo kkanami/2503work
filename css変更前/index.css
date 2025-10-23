@@ -1,30 +1,11 @@
 body {
   font-size: 16px; /* PC標準 */
-  color: #333;
-  background: #fff;
-  text-align: center;
-}
-
-h1 {
-  font-weight: bold;
-  margin-top: 100px;
-  margin-bottom: 0;
-  font-size: 2rem;
-}
-
-p {
-  margin: 0;
-}
-
-.mypage {
-  margin: 60px auto;
-  padding-top: 50px;
 }
 
 .top_image {
   background-image: url(../img/library.png);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 80%;
   background-size: contain;
   /* 画像のサイズを指定    */
   width: 100%;
@@ -32,17 +13,14 @@ p {
   text-align: center;
 }
 
-.login {
-  padding-top: 100px;
-  color: white;
-  font-weight: 500;
+h1 {
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 0;
 }
 
-.text {
-  background-color: #fff;
-  color: #000;
-  margin-top: 3px;
-  border: 1px solid #eee;
+p {
+  margin: 0;
 }
 
 #mail_msg,
@@ -52,6 +30,12 @@ p {
   font-family: "Kiwi Maru", serif;
   font-weight: bold;
   font-style: normal;
+}
+
+.login {
+  margin-top: 50px;
+  color: white;
+  font-weight: bold;
 }
 
 .submit {
@@ -70,6 +54,11 @@ a {
 a:hover {
   color: #000;
   background: #fff;
+}
+
+.mypage {
+  margin-top: 200px;
+  color: white;
 }
 
 .button {

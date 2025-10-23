@@ -30,11 +30,6 @@
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
     <title>library</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/mypage.css">
 
 </head>
@@ -64,7 +59,7 @@
         <div class="top_image">
             <div class="main">
                 <h1>library</h1>
-                <p>他のユーザーが公開している本を閲覧できます。<br>
+                <p>ここでは他のユーザーが公開している本を閲覧できます。<br>
                     気になる本は、コピーで自分の蔵書に追加できます。
                 </p>
                 <ul class="list">

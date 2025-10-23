@@ -35,7 +35,7 @@ a {
   padding: 20px;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 200px;
+  background-position: center 60%;
   background-size: contain;
   /* 画像のサイズを指定    */
   width: 100%;
@@ -43,30 +43,14 @@ a {
 }
 
 h1 {
-  font-size: 2rem;
-  padding: 20px 0 10px;
+  margin: 30px 0;
   text-align: center;
-  font-weight: bold;
-}
-
-p {
-  padding-bottom: 20px;
-  font-weight: 500;
-}
-
-.text,
-#memo {
-  background-color: #fff;
-  color: #000;
-  margin-top: 3px;
-  border: 1px solid #eee;
 }
 
 .required {
   font-family: "Kiwi Maru", serif;
   color: #e60000;
-  font-weight: 500;
-  font-size: 0.8rem;
+  font-weight: bold;
   margin: 0 0 15px 0;
 }
 
@@ -75,7 +59,7 @@ form.main,
   width: 550px;
   margin: 80px auto;
   padding-top: 10px;
-  font-weight: 600;
+  font-weight: bold;
   color: black;
   background: rgba(255, 255, 255, 0.55);
   border: none;
@@ -91,7 +75,6 @@ form.main div {
 .delete,
 .profile {
   margin: auto;
-  width: 60%;
 }
 
 form.back {
@@ -134,9 +117,9 @@ form.back {
   }
 
   .top_image {
-    height: 600px; /* 高さを小さくしてスクロール量を減らす */
     background-size: contain;
-    background-position: 50% 400px;
+    height: auto;
+    min-height: 400px;
   }
 
   form.main,

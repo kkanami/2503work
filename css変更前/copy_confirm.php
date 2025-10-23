@@ -24,19 +24,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=”description” content=”読書記録アプリケーション”>
-    <meta property=”og:type” content=”website” />
-    <meta property=”og:title” content=”Collection Of Book” />
-    <meta property=”og:description” content=”読書記録アプリケーション” />
-    <meta property=”og:site_name” content=”Collection Of Book” />
-    <title>蔵書更新確認画面</title>
+    <title>蔵書コピー登録確認画面</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="css/regist.css">
-
 </head>
 
 <body>
@@ -63,18 +53,9 @@
     <main>
         <div class="top_image">
             <div class="main">
-                <h1>蔵書更新確認画面</h1>
+                <h1>蔵書コピー登録確認画面</h1>
                 <table class="update">
 
-                    <?php
-            //PDO
-            mb_internal_encoding("utf8");
-            $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
-            if(!empty($_POST['resultid1'])){
-            $stmt=$pdo->query("select*from collection_book where id = '". $_SESSION['user']."'");
-            $row=$stmt->fetch();
-            }
-            ?>
                     <tr>
                         <th>非公開/公開
                         </th>
@@ -87,7 +68,7 @@
                              echo $privatedisp; }?>
                         </td>
                     </tr>
-
+                    
                     <tr>
                         <th>タイトル
                         </th>
@@ -149,8 +130,8 @@
                     </tr>
                 </table>
                 <div class="button_container">
-                    <form action="update.php" method="post">
-                        <input type='hidden' value='<?php echo $_POST["resultid1"];?>' name='resultid1' id='resultid1'>
+                    <form action="copy.php" method="post">
+                        <input type='hidden' value='<?php echo $_POST["resultid2"];?>' name='resultid2' id='resultid2'>
                         <input type="submit" class="button" value="前に戻る">
                         <input type="hidden" value="<?php if(!empty($_POST['private'])){echo $_POST['private'];}?>" name="private">
                         <input type="hidden" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}?>" name="title">
@@ -162,9 +143,9 @@
                         <input type="hidden" value="<?php if(!empty($_POST['memo'])){echo $_POST['memo'];}?>" name="memo">
                     </form>
 
-                    <form action="update_complete.php" method="post">
-                        <input type='hidden' value='<?php echo $_POST["resultid1"];?>' name='resultid1' id='resultid1'>
-                        <input type="submit" class="button" value="更新する">
+                    <form action="copy_complete.php" method="post">
+                        <input type='hidden' value='<?php echo $_POST["resultid2"];?>' name='resultid2' id='resultid2'>
+                        <input type="submit" class="button" value="登録する">
                         <input type="hidden" value="<?php if(!empty($_POST['private'])){echo $_POST['private'];}?>" name="private">
                         <input type="hidden" value="<?php if(!empty($_POST['title'])){echo $_POST['title'];}?>" name="title">
                         <input type="hidden" value="<?php if(!empty($_POST['author'])){echo $_POST['author'];}?>" name="author">

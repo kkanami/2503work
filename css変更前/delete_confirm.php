@@ -16,37 +16,7 @@
     
     echo  "<p>". $row['nick_name']."さん"."</p>";
 
-
-    try{
-    $pdo=new PDO("mysql:dbname=kkanami;host=localhost;","kkanami","collection");
-    $sql="insert into collection_book(private,title,author,isbn,publisher,publication_date,unread,memo,owner)
-    values(:private,:title,:author,:isbn,:publisher,:publication_date,:unread,:memo, :owner)";
-    if(!empty($_POST['title'])) {
-    $stmt=$pdo->prepare($sql);
-
-    $private=(int) $_POST['private'];
-    $stmt->bindvalue(":private",$private,PDO::PARAM_STR);
-    $stmt->bindValue(":title",$_POST['title'],PDO::PARAM_STR);
-    $stmt->bindvalue(":author",$_POST['author'],PDO::PARAM_STR);
-    $stmt->bindvalue(":isbn",$_POST['isbn'],PDO::PARAM_STR);
-    $stmt->bindvalue(":publisher",$_POST['publisher'],PDO::PARAM_STR);
-    $stmt->bindvalue(":publication_date",$_POST['publication_date'],PDO::PARAM_STR);
-    $unread=(int) $_POST['unread'];
-    $stmt->bindvalue(":unread",$unread,PDO::PARAM_STR);
-    $stmt->bindvalue(":memo",$_POST['memo'],PDO::PARAM_STR);
-    $owner=(int) $_SESSION['user'];
-    $stmt->bindvalue(":owner",$owner,PDO::PARAM_STR);
-
-    $stmt->execute();
-    }
-    }catch(Exception $e){
-        echo '<span style="color:#FF0000">エラーが発生したため蔵書登録できません。</span>';
-        echo $e->getMessage();
-
-        exit();
-    }
 ?>
-
 <!doctype html>
 <html lang="ja">
 
@@ -58,12 +28,7 @@
     <meta property=”og:title” content=”Collection Of Book” />
     <meta property=”og:description” content=”読書記録アプリケーション” />
     <meta property=”og:site_name” content=”Collection Of Book” />
-    <title>蔵書登録完了画面</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet"> 
+    <title>蔵書削除確認画面</title>
     <link rel="stylesheet" type="text/css" href="css/regist.css">
 </head>
 
@@ -87,16 +52,36 @@
             </ul>
         </div>
     </header>
-    <div class="top_image">
 
-        <div class="main">
-            <h1>蔵書登録</h1>
-            <p><span>登録完了しました</span></p>
-            <form action="mypage.php">
-                <input type="submit" class="button" value="マイページへ戻る">
-            </form>
+    <main>
+
+        <div class="top_image">
+            <div class="main">
+                <h1>蔵書削除確認画面</h1>
+                <p><span>本当に削除してよろしいですか？</span></p>
+
+                <table class="delete">
+                    <tr>
+                        <td>
+                            <form action="delete.php" method="post">
+                                <input type='hidden' value='<?php echo $_POST["resultid2"];?>' name='resultid2' id='resultid2'>
+                                <input type="submit" class="button" value="前に戻る">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="delete_complete.php" method="post">
+                                <input type='hidden' value='<?php echo $_POST["resultid2"];?>' name='resultid2' id='resultid2'>
+                                <input type="submit" class="button" value="削除する">
+                            </form>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
+    </main>
+
+
 </body>
 
 </html>
